@@ -24,7 +24,7 @@ const signin = (req, res)=>{
     .then((user) => {
         if (!user) {
             console.log('Invalid credentials: User not found');
-            return res.status(400).json({ status: false, message: 'User does not exist' });
+            return res.status(400).json({ status: false, message: 'User does not exist!' });
         }
     
         return bcrypt.compare(password, user.password)
